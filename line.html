@@ -19,9 +19,13 @@
   var cy = canvas.height = 400
 
   context.beginPath()
-  context.arc(100, 100, 50, 0, Math.PI * 2, true)
-  context.closePath()
-  context.fillStyle = 'rgb(255,255,255)'
-  context.fill()
+  context.moveTo(50,50) // 把路径移动到画布中的指定点，不创建线条
+  context.lineTo(100,100) // 添加一个新点，然后在画布中创建从该点到最后指定点的线条
+  context.lineTo(100,50)
+  context.lineTo(200,200)
+  context.lineWidth = 10
+  context.lineCap = 'round'
+  context.strokeStyle = 'rgb(255,255,255)'
+  context.stroke()
 </script>
 </html>
